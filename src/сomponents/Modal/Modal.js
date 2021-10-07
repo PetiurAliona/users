@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Overlay } from "./ModalStyled"
+import styles from "./Modal.module.css"
 
 const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) => {
   useEffect(() => {
@@ -21,18 +21,18 @@ const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) 
   return (
     <>
       {closeModal && (
-        <Overlay onClick={onOverlayClick}>
-          <div className="modal">
-            <button type="button" className="closeBtn" onClick={() => setCloseModal()}>
+        <div onClick={onOverlayClick} className={styles.overlay}>
+          <div className={styles.modal}>
+            <button type="button" className={styles.closeBtn} onClick={() => setCloseModal()}>
               <span>X</span>
             </button>
             <h2 className="nameForm">{nameForm}</h2>
             {children}
-            <button type="button" className="cancelBtn" onClick={() => setCloseModal()}>
+            <button type="button" className={styles.cancelBtn} onClick={() => setCloseModal()}>
               Close
             </button>
           </div>
-        </Overlay>
+        </div>
       )}
     </>
   )
