@@ -1,9 +1,8 @@
 import "./App.css"
+import UsersList from "./сomponents/UserList/UsersList"
 
 function App() {
-  return <div className="App">
-  
-  </div>
+  return <UsersList />
 }
- 
+
 export default App
