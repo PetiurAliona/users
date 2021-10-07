@@ -9,7 +9,7 @@ const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) 
     return () => {
       window.removeEventListener("keydown", handleEscape)
       const body = document.querySelector("body")
-      body.style.overflow = "auto"
+      body.style.overflow = ""
     }
   })
 

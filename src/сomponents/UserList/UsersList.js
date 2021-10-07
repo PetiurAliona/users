@@ -14,6 +14,10 @@ const UsersList = () => {
       .catch((error) => console.log(error))
   }, [])
 
+  const onSubmit = (user) => {
+    setUsersList((prev) => [...prev, user])
+  }
+
   return (
     <div>
       <h1>User info</h1>
@@ -28,8 +32,7 @@ const UsersList = () => {
           </li>
         ))}
       </ul>
-
-      <CreateUsers closeModal={closeModal} setCloseModal={setCloseModal} />
+      <CreateUsers closeModal={closeModal} setCloseModal={setCloseModal} onSubmit={onSubmit} />
     </div>
   )
 }
