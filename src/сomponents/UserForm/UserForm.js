@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import Input from "../Input/Input"
 import { addUser } from "../Utills/apiServices"
 
+import styles from "./UserForm.module.css"
+
 const UserForm = ({ onSubmit, setCloseModal }) => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -26,15 +28,6 @@ const UserForm = ({ onSubmit, setCloseModal }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input
-        name={firstName}
-        label="First Name"
-        onChange={(e) => setFirstName(e.currentTarget.value)}
-        value={firstName}
-        isError
-        className=""
-        inputId="firstName"
-      />
       <label>
         Title
         <select name="title" defaultValue={title} onChange={(e) => setTitle(e.target.value)}>
@@ -46,39 +39,47 @@ const UserForm = ({ onSubmit, setCloseModal }) => {
           <option value="dir">dir</option>
         </select>
       </label>
-      {/* <label>
-        First Name
-        <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.currentTarget.value)} />
-      </label> */}
-      <label>
-        Last Name
-        <input
-          type="text"
-          name="lastName"
-          value={lastName}
-          // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          // required
-          onChange={(e) => setLastName(e.currentTarget.value)}
-        />
-      </label>
-      <label>
-        Email
-        <input
-          type="email"
-          name="email"
-          multiple
-          value={email}
-          // pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/"
-          placeholder="email@example.com"
-          // required
-          onChange={(e) => setEmail(e.currentTarget.value)}
-        />
-      </label>
-      <label>
-        Avatar
-        <input type="text" name="picture" value={picture} onChange={(e) => setPicture(e.currentTarget.value)} />
-      </label>
-      <button type="submit">Add user</button>
+
+      <Input
+        name={firstName}
+        label="First Name"
+        onChange={(e) => setFirstName(e.currentTarget.value)}
+        value={firstName}
+        isError
+        className=""
+        inputId="firstName"
+      />
+      <Input
+        name={lastName}
+        label="Last Name"
+        onChange={(e) => setLastName(e.currentTarget.value)}
+        value={lastName}
+        isError
+        className=""
+        inputId="lastName"
+      />
+      <Input
+        name={email}
+        label="Email"
+        onChange={(e) => setEmail(e.currentTarget.value)}
+        value={email}
+        isError
+        className=""
+        inputId="email"
+      />
+
+      <Input
+        name={picture}
+        label="Avatar"
+        onChange={(e) => setPicture(e.currentTarget.value)}
+        value={picture}
+        isError
+        className=""
+        inputId="picture"
+      />
+      <button type="submit" className={styles.addBtn}>
+        Add user
+      </button>
     </form>
   )
 }

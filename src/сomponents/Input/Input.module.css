@@ -2,14 +2,15 @@
   --color-label-input: rgba(24, 28, 39, 0.6);
   --color-input-text: #181c27;
   --color-input-border: rgba(24, 28, 39, 0.2);
-  --color-input-focus: #ff6b08;
+  --color-input-focus: #6495ed;
   --color-input-error: #ff0000;
 }
 
 .wrapper {
   position: relative;
   padding: 15px 0 0;
-  width: 100%;
+  width: 90%;
+  padding-left: 15px;
 }
 
 .input {
@@ -49,7 +50,7 @@
 }
 
 .bottomLine::before {
-  content: '';
+  content: "";
   width: 0;
   height: 2px;
   position: absolute;
