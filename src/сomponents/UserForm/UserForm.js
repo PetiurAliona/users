@@ -4,7 +4,7 @@ import { addUser } from "../Utills/apiServices"
 
 import styles from "./UserForm.module.css"
 
-const UserForm = ({ onSubmit, setCloseModal }) => {
+const UserForm = ({ onSubmit, setCloseModal, handleAddUserSuccess }) => {
   const [title, setTitle] = useState("mr")
   const [picture, setPicture] = useState("")
 
@@ -52,6 +52,7 @@ const UserForm = ({ onSubmit, setCloseModal }) => {
       onSubmit(response)
       setTitle("")
       setPicture("")
+      handleAddUserSuccess(true)
       setCloseModal()
     } catch (e) {
       Object.entries(e.data).forEach(([key, value]) => {

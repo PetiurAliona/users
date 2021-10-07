@@ -5,8 +5,9 @@ import { getUsers } from "../Utills/apiServices"
 
 const UsersList = () => {
   const [usersList, setUsersList] = useState([])
-
   const [closeModal, setCloseModal] = useState(false)
+
+  const [successMessage, setSuccessMessage] = useState(false)
 
   useEffect(() => {
     getUsers()
@@ -14,12 +15,24 @@ const UsersList = () => {
       .catch((error) => console.log(error))
   }, [])
 
+  useEffect(() => {
+    if (!successMessage) return
+    setTimeout(() => {
+      setSuccessMessage(false)
+    }, 3000)
+  }, [successMessage])
+
   const onSubmit = (user) => {
     setUsersList((prev) => [...prev, user])
   }
 
+  const handleAddUserSuccess = (value) => {
+    setSuccessMessage(value)
+  }
+
   return (
     <div>
+      {successMessage && <div>User is added!</div>}
       <h1>User info</h1>
       <ButtonAdd onHandleClick={() => setCloseModal(true)} />
       <ul>
@@ -32,7 +45,12 @@ const UsersList = () => {
           </li>
         ))}
       </ul>
-      <CreateUsers closeModal={closeModal} setCloseModal={setCloseModal} onSubmit={onSubmit} />
+      <CreateUsers
+        closeModal={closeModal}
+        setCloseModal={setCloseModal}
+        onSubmit={onSubmit}
+        handleAddUserSuccess={handleAddUserSuccess}
+      />
     </div>
   )
 }
