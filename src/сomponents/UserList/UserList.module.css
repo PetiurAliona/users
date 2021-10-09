@@ -1,0 +1,43 @@
+.wrapper {
+  padding: 25px;
+  position: absolute;
+}
+
+.message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 128, 0, 0.349);
+  padding: 10px 25px 10px 25px;
+  border-radius: 15px;
+}
+
+.userList {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userItem {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 250px;
+  background-color: #c2d5f857;
+  display: flex;
+  justify-content: center;
+}
+
+.userItem:hover,
+.userItem:focus {
+  box-shadow: 0px 6px 26px rgba(0, 5, 97, 0.1);
+}
+
+.userInfo {
+  font-weight: bold;
+}
+
+.picture {
+  width: 115px;
+  height: 115px;
+}

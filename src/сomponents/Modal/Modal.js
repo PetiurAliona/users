@@ -26,7 +26,7 @@ const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) 
             <button type="button" className={styles.closeBtn} onClick={() => setCloseModal()}>
               <span>X</span>
             </button>
-            <h2 className="nameForm">{nameForm}</h2>
+            <h2 className={styles.nameForm}>{nameForm}</h2>
             {children}
             <button type="button" className={styles.cancelBtn} onClick={() => setCloseModal()}>
               Close

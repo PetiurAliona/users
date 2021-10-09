@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import ButtonAdd from "../ButtonAdd/ButtonAdd"
 import CreateUsers from "../CreateUsers/CreateUsers"
 import { getUsers } from "../Utills/apiServices"
+import styles from "./UserList.module.css"
 
 const UsersList = () => {
   const [usersList, setUsersList] = useState([])
@@ -31,17 +32,28 @@ const UsersList = () => {
   }
 
   return (
-    <div>
-      {successMessage && <div>User is added!</div>}
+    <div className={styles.wrapper}>
+      {successMessage && <div className={styles.message}>User is added!</div>}
       <h1>User info</h1>
       <ButtonAdd onHandleClick={() => setCloseModal(true)} />
-      <ul>
+      <ul className={styles.userList}>
         {usersList.map((user) => (
-          <li key={user.id}>
-            <p>Title: {user.title} </p>
-            <p>First Name: {user.firstName}</p>
-            <p>Last Name: {user.lastName}</p>
-            <img src={user.picture} alt={user.lastName} />
+          <li className={styles.userItem} key={user.id}>
+            <div className={styles.userInfoWrapper}>
+              <p>
+                <span className={styles.userInfo}>Title: </span>
+                {user.title}
+              </p>
+              <p>
+                <span className={styles.userInfo}>First Name: </span> {user.firstName}
+              </p>
+              <p>
+                <span className={styles.userInfo}>Last Name: </span>
+                {user.lastName}
+              </p>
+            </div>
+
+            <img className={styles.picture} src={user.picture} alt={user.lastName} />
           </li>
         ))}
       </ul>

@@ -1,14 +1,31 @@
+.title {
+  color: rgba(24, 28, 39, 0.6);
+  display: flex;
+  justify-content: left;
+}
+
+.selectTitle {
+  margin-left: 10px;
+  border-color: rgba(24, 28, 39, 0.2);
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.selectTitle:focus,
+.selectTitle:hover {
+  border-color: #6495ed;
+}
+
 .addBtn {
+  margin-top: 20px;
   background-color: #6495ed;
   border: none;
   border-radius: 25px;
   text-align: center;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
-  height: 44px;
-  padding-left: 44px;
-  padding-right: 44px;
+  padding: 10px 25px 10px 25px;
 }
 
 .addBtn:focus,

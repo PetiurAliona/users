@@ -18,12 +18,13 @@
 
   .nameForm {
     font-size: 36px;
-    padding-top: 121px;
+    padding-top: 20px;
   }
 }
 
 .modal {
-  padding: 15px;
+  border-radius: 15px;
+  padding: 25px;
   width: 420px;
   position: relative;
   background-color: #ffffff;
@@ -33,20 +34,19 @@
 }
 
 .nameForm {
-  padding-top: 63px;
-  font-family: Montserrat;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 26px;
   line-height: 1.22;
   letter-spacing: 0.04em;
+  margin-bottom: 20px;
 }
 
 .cancelBtn {
   border: 0;
   background-color: transparent;
-  margin-top: 30px;
+  margin-top: 15px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   letter-spacing: 0.04em;
   text-decoration: underline;
