@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import styles from "./Modal.module.css"
+import sprite from "../Svg/sprite.svg"
 
 const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) => {
   useEffect(() => {
@@ -24,7 +25,10 @@ const Modal = ({ closeModal, setCloseModal, children, nameForm = "Name form" }) 
         <div onClick={onOverlayClick} className={styles.overlay}>
           <div className={styles.modal}>
             <button type="button" className={styles.closeBtn} onClick={() => setCloseModal()}>
-              <span>X</span>
+              <svg className={styles.closeBtn}>
+                <use href={sprite + "#icon-cancel-circle"} />
+              </svg>
+              {/* <span>X</span> */}
             </button>
             <h2 className={styles.nameForm}>{nameForm}</h2>
             {children}

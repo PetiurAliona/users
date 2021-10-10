@@ -59,6 +59,9 @@
 }
 
 .closeBtn {
+  fill: black;
+  width: 20px;
+  height: 20px;
   border: 0;
   background-color: transparent;
   display: block;
@@ -69,5 +72,5 @@
 
 .closeBtn:focus,
 .closeBtn:hover {
-  color: #585858;
+  fill: #585858;
 }
